@@ -1,7 +1,5 @@
 #   Hiperfoco em Foco
-![hiperfoco](https://github.com/user-attachments/assets/05b0203a-8c9e-441d-8e5f-af1c1c1cbb4a)
-
-# Hiperfoco em Foco
+![FOCO](https://github.com/user-attachments/assets/20888ae2-9e20-401f-a332-1246113b80c5)
 
 **Hiperfoco em Foco** é um projeto simples e objetivo, criado para ajudar usuários a explorar diferentes possibilidades de carreira de maneira prática. A plataforma apresenta uma interface com botões interativos que direcionam os usuários a áreas de atuação específicas. A ideia central é fornecer informações curtas e claras.
 
@@ -19,10 +17,18 @@
 - **Design Responsivo**: O layout do site se adapta a diferentes tamanhos de tela, garantindo uma experiência consistente em dispositivos móveis, tablets e desktops.
 
 - **Cores e Tipografia**: Cores que promovem a concentração e uma tipografia legível foram escolhidas para garantir que o conteúdo seja fácil de ler e visualmente agradável.
-- 
-## 📜 Licença
-Este projeto é licenciado sob os termos da Licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+  
 
 ## 💻 Demonstração
+
+
+https://github.com/user-attachments/assets/19650cbc-123c-41e6-bf76-f794a4636646
+
+
+
+
+
+## Desenvolvido por Lais Ribeiro 🧩 ##
+
 
 
