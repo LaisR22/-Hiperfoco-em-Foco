@@ -1,4 +1,4 @@
-#   Hiperfoco em Foco
+##  Hiperfoco em Foco
 
  (https://github.com/user-attachments/assets/cb875a87-cd5b-4251-8bb4-ddae01869579)
 
