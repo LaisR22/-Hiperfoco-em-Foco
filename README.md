@@ -1,33 +1,87 @@
 ##  Hiperfoco em Foco
 
- (https://github.com/user-attachments/assets/cb875a87-cd5b-4251-8bb4-ddae01869579)
+ 
+![Captura de tela 2025-05-16 183705](https://github.com/user-attachments/assets/6245c590-8317-457d-a3b5-aee8d4f52da6)
 
-**Hiperfoco em Foco** é um projeto simples e objetivo, criado para ajudar usuários a explorar diferentes possibilidades de carreira de maneira prática. A plataforma apresenta uma interface com botões interativos que direcionam os usuários a áreas de atuação específicas. A ideia central é fornecer informações curtas e claras.
 
-## 🛠️ Tecnologias Utilizadas
-- **HTML**
-- **CSS**
-- **JavaScript**
-- **Node.js**
+**Hiperfoco em Foco** é uma plataforma web desenvolvida com o objetivo de auxiliar pessoas a descobrirem seus padrões de concentração (hiperfoco) e relacioná-los a possíveis carreiras profissionais. A proposta combina design limpo, acessibilidade e conteúdo informativo voltado à orientação profissional.
 
-## **Design Utilizado**
-- **Design Minimalista**: O site é projetado com uma estética limpa e simples, focando na funcionalidade e reduzindo o ruído visual, ajudando os usuários a se concentrarem nas opções de carreira.
-  
-- **Interface Intuitiva**: A navegação é fácil e acessível, permitindo que os usuários encontrem rapidamente as informações que procuram. Os botões interativos são grandes e claros, facilitando a interação.
+---
 
-- **Design Responsivo**: O layout do site se adapta a diferentes tamanhos de tela, garantindo uma experiência consistente em dispositivos móveis, tablets e desktops.
+## 📌 Índice
 
-- **Cores e Tipografia**: Cores que promovem a concentração e uma tipografia legível foram escolhidas para garantir que o conteúdo seja fácil de ler e visualmente agradável.
-  
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Público-alvo](#público-alvo)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Rodar o Projeto](#como-rodar-o-projeto)
+- [Estrutura de Arquivos](#estrutura-de-arquivos)
+- [Próximos Passos](#próximos-passos)
+- [Licença](#licença)
+- [Autora](#autora)
+
+---
+
+## 🧠 Sobre o Projeto
+
+O projeto surgiu com a intenção de unir **neurodivergência** e **carreira**, trazendo uma abordagem simples e acessível sobre como o padrão de foco de cada pessoa pode influenciar nas escolhas profissionais. Com base nisso, a interface incentiva o usuário a conhecer melhor seu perfil por meio de um teste e sugestões de carreira personalizadas.
+
+---
+
+## 🎯 Público-alvo
+
+- Pessoas neurodivergentes (com TDAH, TEA, etc.)
+- Jovens em processo de escolha profissional
+- Adultos em transição de carreira
+- Profissionais interessados em autoconhecimento cognitivo
+
+---
+
+## 🚀 Funcionalidades
+
+### Página Inicial
+- Apresentação do projeto e chamada à ação
+- Destaque para o teste de hiperfoco e sugestões de carreira
+- Dica informativa com estatísticas cognitivas
+
+### Teste de Hiperfoco
+- (Simulado) Formulário para identificar o estilo de foco
+- Resultados direcionados ao perfil do usuário
+
+### Página de Carreiras
+- Lista de profissões divididas por tipo de foco
+- Exemplo: foco analítico, foco criativo, foco operacional
+
+### Página de Métodos
+- Métodos e estratégias para utilizar o hiperfoco no dia a dia
+- Técnicas como Pomodoro, blocos de tempo, gamificação
+
+### Depoimentos
+- Relatos de pessoas que descobriram carreiras alinhadas ao seu perfil
+- Valorização da neurodiversidade
+
+### Contato
+- Formulário simples ou informações de contato fictícias
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+| Tecnologia  | Função                                   |
+|-------------|------------------------------------------|
+| HTML5       | Estrutura do conteúdo da página          |
+| CSS3        | Estilização, responsividade e cores      |
+| JavaScript  | Lógica do teste e interatividade básica  |
+| Figma       | Protótipo do layout (caso tenha usado)   |
+| Google Fonts | Tipografia acessível e moderna          |
+
+---
 
 ## 💻 Demonstração
 
 
 
 
-
-
-https://github.com/user-attachments/assets/1a216a22-2b4a-4370-8095-4d3c743a4696
 
 
 
