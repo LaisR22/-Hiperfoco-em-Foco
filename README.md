@@ -1,5 +1,5 @@
 #   Hiperfoco em Foco
-[Captura de tela 2025-05-16 183705](https://github.com/user-attachments/assets/cb875a87-cd5b-4251-8bb4-ddae01869579)
+ (https://github.com/user-attachments/assets/cb875a87-cd5b-4251-8bb4-ddae01869579)
 
 **Hiperfoco em Foco** é um projeto simples e objetivo, criado para ajudar usuários a explorar diferentes possibilidades de carreira de maneira prática. A plataforma apresenta uma interface com botões interativos que direcionam os usuários a áreas de atuação específicas. A ideia central é fornecer informações curtas e claras.
 
