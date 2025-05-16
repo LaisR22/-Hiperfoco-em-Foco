@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiperfoco em Foco | Produtividade para Mentes Criativas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #7c3aed;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #4f46e5 0%, #9333ea 100%);
+            transition: width 0.5s ease;
+        }
+        
+        .assessment-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .assessment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-left-color: #7c3aed;
+        }
+        
+        .career-pill {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background-color: #e9d5ff;
+            color: #6b21a8;
+            font-size: 14px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .typing-demo {
+            width: 22ch;
+            animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+        }
+            
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl mr-3">H</div>
+                    <span class="text-xl font-semibold text-gray-800">Hiperfoco em Foco</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-gray-900">Início</a>
+                    <a href="#assessment" class="nav-link text-gray-600 hover:text-gray-900">Teste de Hiperfoco</a>
+                    <a href="#careers" class="nav-link text-gray-600 hover:text-gray-900">Carreiras</a>
+                    <a href="#features" class="nav-link text-gray-600 hover:text-gray-900">Métodos</a>
+                    <a href="#testimonials" class="nav-link text-gray-600 hover:text-gray-900">Depoimentos</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900">Contato</a>
+                </nav>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-gray-900">Início</a>
+                <a href="#assessment" class="block py-2 text-gray-600 hover:text-gray-900">Teste de Hiperfoco</a>
+                <a href="#careers" class="block py-2 text-gray-600 hover:text-gray-900">Carreiras</a>
+                <a href="#features" class="block py-2 text-gray-600 hover:text-gray-900">Métodos</a>
+                <a href="#testimonials" class="block py-2 text-gray-600 hover:text-gray-900">Depoimentos</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Descubra seu padrão de hiperfoco e a carreira ideal</h1>
+                <p class="text-xl mb-8 opacity-90">Identifique seu perfil cognitivo e encontre profissões que valorizam sua forma única de concentração.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#assessment" class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg text-center transition duration-300">Fazer o teste</a>
+                    <a href="#careers" class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-lg font-semibold text-lg text-center transition duration-300">Ver carreiras</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pessoa focada trabalhando" class="rounded-xl shadow-2xl floating">
+                <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-xl shadow-lg hidden md:block">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-lightbulb text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Você sabia?</p>
+                            <p class="text-sm text-gray-800">70% das pessoas têm um padrão único de hiperfoco</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl font-bold gradient-text mb-2">87%</div>
+                    <p class="text-gray-600">aumento na satisfação profissional</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold gradient-text mb-2">63%</div>
+                    <p class="text-gray-600">melhora na produtividade</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold gradient-text mb-2">5.2x</div>
+                    <p class="text-gray-600">mais chances de sucesso na carreira</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold gradient-text mb-2">92%</div>
+                    <p class="text-gray-600">recomendariam para amigos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section id="assessment" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Teste de Perfil de Hiperfoco</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Responda às perguntas para identificar seu padrão de concentração e descubra carreiras compatíveis.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl p-8 shadow-md">
+                <div id="assessment-progress" class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm font-medium text-gray-700">Progresso</span>
+                        <span id="progress-text" class="text-sm font-medium text-gray-700">1/10</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                    </div>
+                </div>
+                
+                <div id="assessment-questions">
+                    <!-- Question 1 -->
+                    <div class="question-container" data-question="1">
+                        <h3 class="text-xl font-semibold mb-4">1. Quando você está realmente engajado em uma atividade:</h3>
+                        <div class="space-y-4">
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q1-a1" name="question1" class="hidden" value="deep">
+                                <label for="q1-a1" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Perco completamente a noção do tempo esqueço até de necessidades básicas</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q1-a2" name="question1" class="hidden" value="intermittent">
+                                <label for="q1-a2" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Tenho momentos intensos de concentração alternados com distrações</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q1-a3" name="question1" class="hidden" value="selective">
+                                <label for="q1-a3" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Só consigo me concentrar assim em assuntos que realmente me interessam</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q1-a4" name="question1" class="hidden" value="environmental">
+                                <label for="q1-a4" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Depende muito do ambiente - se estiver calmo e organizado, consigo focar bem</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-container hidden" data-question="2">
+                        <h3 class="text-xl font-semibold mb-4">2. Como você descreveria seu padrão de trabalho ideal?</h3>
+                        <div class="space-y-4">
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q2-a1" name="question2" class="hidden" value="deep">
+                                <label for="q2-a1" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Longos períodos ininterruptos (4+ horas) em uma única tarefa</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q2-a2" name="question2" class="hidden" value="intermittent">
+                                <label for="q2-a2" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Sessões de 1-2 horas com pequenas pausas entre elas</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q2-a3" name="question2" class="hidden" value="selective">
+                                <label for="q2-a3" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Depende totalmente do meu interesse na tarefa</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q2-a4" name="question2" class="hidden" value="environmental">
+                                <label for="q2-a4" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Preciso de um ambiente perfeito para conseguir me concentrar</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question-container hidden" data-question="3">
+                        <h3 class="text-xl font-semibold mb-4">3. Quando você está no meio de uma tarefa importante e é interrompido:</h3>
+                        <div class="space-y-4">
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q3-a1" name="question3" class="hidden" value="deep">
+                                <label for="q3-a1" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Levo muito tempo para retomar o mesmo nível de concentração</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q3-a2" name="question3" class="hidden" value="intermittent">
+                                <label for="q3-a2" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Consigo voltar rapidamente ao estado de fluxo</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q3-a3" name="question3" class="hidden" value="selective">
+                                <label for="q3-a3" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Só consigo voltar se a tarefa for realmente interessante</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q3-a4" name="question3" class="hidden" value="environmental">
+                                <label for="q3-a4" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Preciso recriar todo o ambiente para conseguir focar novamente</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question-container hidden" data-question="4">
+                        <h3 class="text-xl font-semibold mb-4">4. Como você lida com tarefas que considera tediosas?</h3>
+                        <div class="space-y-4">
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q4-a1" name="question4" class="hidden" value="deep">
+                                <label for="q4-a1" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Consigo me forçar a focar por longos períodos se necessário</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q4-a2" name="question4" class="hidden" value="intermittent">
+                                <label for="q4-a2" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Faço em pequenos blocos com muitas pausas</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q4-a3" name="question4" class="hidden" value="selective">
+                                <label for="q4-a3" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Quase impossível - procrastino até o último minuto</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q4-a4" name="question4" class="hidden" value="environmental">
+                                <label for="q4-a4" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Depende - se o ambiente ajudar, consigo me concentrar</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-container hidden" data-question="5">
+                        <h3 class="text-xl font-semibold mb-4">5. Como você prefere aprender coisas novas?</h3>
+                        <div class="space-y-4">
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q5-a1" name="question5" class="hidden" value="deep">
+                                <label for="q5-a1" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Imersão total no assunto por dias ou semanas</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q5-a2" name="question5" class="hidden" value="intermittent">
+                                <label for="q5-a2" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Exploro vários tópicos alternadamente</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q5-a3" name="question5" class="hidden" value="selective">
+                                <label for="q5-a3" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Só consigo me dedicar a assuntos que me fascinam</span>
+                                </label>
+                            </div>
+                            <div class="assessment-card bg-white p-4 rounded-lg border border-gray-200 cursor-pointer">
+                                <input type="radio" id="q5-a4" name="question5" class="hidden" value="environmental">
+                                <label for="q5-a4" class="flex items-center cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                                    <span>Preciso de um ambiente de estudo perfeito</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button id="prev-btn" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition hidden">Anterior</button>
+                        <button id="next-btn" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Próxima</button>
+                    </div>
+                </div>
+                
+                <div id="assessment-results" class="hidden">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Seu Perfil de Hiperfoco</h3>
+                        <p id="profile-type" class="text-xl gradient-text font-semibold">Concentração Profunda</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold mb-4">Características do seu perfil:</h4>
+                        <ul id="profile-traits" class="list-disc pl-5 space-y-2 text-gray-700">
+                            <!-- Traits will be inserted here by JS -->
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Carreiras recomendadas:</h4>
+                        <div id="career-matches" class="flex flex-wrap">
+                            <!-- Careers will be inserted here by JS -->
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button id="retake-btn" class="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition mr-4">Refazer teste</button>
+                        <button id="save-btn" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Salvar resultados</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="aspect-w-16 aspect-h-9 bg-black relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-play text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Entenda seu hiperfoco</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Carreiras por Tipo de Hiperfoco</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Descubra profissões que se alinham com diferentes padrões de concentração.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Career 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-microscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hiperfoco Profundo</h3>
+                    <p class="text-gray-600 mb-4">Capacidade de imersão total por longos períodos, ideal para trabalhos que exigem atenção sustentada.</p>
+                    <div class="mt-4">
+                        <span class="career-pill">Pesquisador Científico</span>
+                        <span class="career-pill">Desenvolvedor de Software</span>
+                        <span class="career-pill">Escritor</span>
+                        <span class="career-pill">Cirurgião</span>
+                        <span class="career-pill">Engenheiro</span>
+                    </div>
+                </div>
+                
+                <!-- Career 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-lightbulb text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hiperfoco Criativo</h3>
+                    <p class="text-gray-600 mb-4">Concentração intensa em atividades que estimulam a criatividade e inovação.</p>
+                    <div class="mt-4">
+                        <span class="career-pill">Designer</span>
+                        <span class="career-pill">Publicitário</span>
+                        <span class="career-pill">Artista</span>
+                        <span class="career-pill">Arquiteto</span>
+                        <span class="career-pill">Roteirista</span>
+                    </div>
+                </div>
+                
+                <!-- Career 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute w-8 h-2 bg-white rounded-full top-1"></div>
+                            <div class="absolute w-8 h-2 bg-white rounded-full top-3"></div>
+                            <div class="absolute w-8 h-2 bg-white rounded-full top-5"></div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hiperfoco Intermitente</h3>
+                    <p class="text-gray-600 mb-4">Períodos curtos de alta concentração alternados com pausas, ideal para multitarefas.</p>
+                    <div class="mt-4">
+                        <span class="career-pill">Jornalista</span>
+                        <span class="career-pill">Gerente de Projetos</span>
+                        <span class="career-pill">Professor</span>
+                        <span class="career-pill">Empreendedor</span>
+                        <span class="career-pill">Médico Emergencista</span>
+                    </div>
+                </div>
+                
+                <!-- Career 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hiperfoco Analítico</h3>
+                    <p class="text-gray-600 mb-4">Concentração em padrões, dados e sistemas complexos.</p>
+                    <div class="mt-4">
+                        <span class="career-pill">Analista de Dados</span>
+                        <span class="career-pill">Economista</span>
+                        <span class="career-pill">Contador</span>
+                        <span class="career-pill">Estatístico</span>
+                        <span class="career-pill">Tradutor</span>
+                    </div>
+                </div>
+                
+                <!-- Career 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hiperfoco Social</h3>
+                    <p class="text-gray-600 mb-4">Concentração intensa em interações humanas e dinâmicas sociais.</p>
+                    <div class="mt-4">
+                        <span class="career-pill">Psicólogo</span>
+                        <span class="career-pill">Vendedor</span>
+                        <span class="career-pill">Recursos Humanos</span>
+                        <span class="career-pill">Diplomata</span>
+                        <span class="career-pill">Assistente Social</span>
+                    </div>
+                </div>
+                
+                <!-- Career 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hiperfoco por Urgência</h3>
+                    <p class="text-gray-600 mb-4">Melhor desempenho sob pressão e prazos curtos.</p>
+                    <div class="mt-4">
+                        <span class="career-pill">Advogado</span>
+                        <span class="career-pill">Repórter</span>
+                        <span class="career-pill">Tradutor Simultâneo</span>
+                        <span class="career-pill">Corretor da Bolsa</span>
+                        <span class="career-pill">Chef de Cozinha</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Métodos de Produtividade</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Técnicas adaptadas para diferentes perfis de hiperfoco.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mapeamento Cognitivo</h3>
+                    <p class="text-gray-600">Identifique seus períodos naturais de alta concentração e alinhe suas tarefas mais importantes a esses momentos.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-tasks text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Fragmentação Estratégica</h3>
+                    <p class="text-gray-600">Divida projetos grandes em micro-tarefas que possam ser concluídas durante seus períodos de hiperfoco.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-stopwatch text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Ciclos de Trabalho</h3>
+                    <p class="text-gray-600">Métodos personalizados de pomodoro adaptados à duração do seu hiperfoco natural.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-project-diagram text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sistemas de Gatilho</h3>
+                    <p class="text-gray-600">Crie associações sensoriais que ajudam a ativar seu estado de hiperfoco quando necessário.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-chart-pie text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Priorização por Energia</h3>
+                    <p class="text-gray-600">Classifique tarefas não por importância, mas pelo tipo de energia mental que exigem.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-sync-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Rotação de Foco</h3>
+                    <p class="text-gray-600">Alternar entre projetos diferentes para manter o engajamento sem esgotamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transformações Reais</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Profissionais que descobriram seu potencial através do entendimento do hiperfoco.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ana Carolina</h4>
+                            <p class="text-gray-500 text-sm">Designer Sênior</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Descobrir que meu hiperfoco era criativo me fez repensar toda minha carreira. Mudei para uma agência que valoriza picos de criatividade em vez de horas no escritório."</p>
+                    <div class="mt-4 text-indigo-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ricardo Almeida</h4>
+                            <p class="text-gray-500 text-sm">Desenvolvedor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"O teste mostrou que tenho hiperfoco profundo. Ajustei meu horário para programar de madrugada, quando ninguém me interrompe. Minha produtividade triplicou."</p>
+                    <div class="mt-4 text-indigo-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Fernanda Gomes</h4>
+                            <p class="text-gray-500 text-sm">Escritora</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Percebi que meu hiperfoco é intermitente. Parei de me culpar por 'distrações' e criei um sistema de trabalho em blocos curtos. Finalmente terminei meu livro!"</p>
+                    <div class="mt-4 text-indigo-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Perguntas Frequentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tire suas dúvidas sobre hiperfoco e produtividade.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                            <span class="text-lg font-medium">O que exatamente é hiperfoco?</span>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-0">
+                            <p class="text-gray-600">Hiperfoco é um estado de concentração intensa e prolongada em uma atividade específica, muitas vezes acompanhado por uma perda de noção do tempo e do ambiente ao redor. É comum em pessoas neurodiversas, mas pode ocorrer em qualquer pessoa quando altamente engajada em tarefas que considera interessantes ou desafiadoras.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                            <span class="text-lg font-medium">Como o teste identifica meu padrão de hiperfoco?</span>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-0">
+                            <p class="text-gray-600">Nosso teste avalia vários aspectos do seu comportamento cognitivo, incluindo duração da concentração, gatilhos de distração, preferências ambientais e resposta a interrupções. Com base em suas respostas, identificamos padrões que se encaixam em categorias validadas por pesquisas em neurociência cognitiva.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                            <span class="text-lg font-medium">Posso ter mais de um tipo de hiperfoco?</span>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-0">
+                            <p class="text-gray-600">Sim, muitas pessoas apresentam características de mais de um perfil, especialmente em contextos diferentes. Por exemplo, você pode ter hiperfoco profundo em atividades criativas, mas hiperfoco intermitente em tarefas administrativas. Nosso relatório detalhado pode identificar esses padrões mistos.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                            <span class="text-lg font-medium">Como posso usar essas informações na minha carreira?</span>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-0">
+                            <p class="text-gray-600">Entender seu padrão de hiperfoco permite: escolher profissões que valorizem sua forma natural de trabalho, negociar condições ideais com empregadores, estruturar seu dia de acordo com seus picos de concentração e desenvolver estratégias personalizadas para lidar com tarefas desafiadoras.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar sua produtividade?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Descubra seu perfil de hiperfoco e receba recomendações personalizadas para sua carreira.</p>
+            <a href="#assessment" class="inline-block bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300">Começar Agora</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Personalize sua Produtividade</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Agende uma consultoria para mapear seu perfil de hiperfoco e criar um plano de carreira personalizado.</p>
+                </div>
+                
+                <form class="bg-white rounded-xl shadow-lg p-8 text-gray-800">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="profession" class="block mb-2 font-medium">Área de Atuação Atual</label>
+                        <select id="profession" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Selecione sua área</option>
+                            <option value="design">Design/Criativo</option>
+                            <option value="tech">Tecnologia/Desenvolvimento</option>
+                            <option value="writing">Escrita/Conteúdo</option>
+                            <option value="academic">Acadêmico/Pesquisa</option>
+                            <option value="entrepreneur">Empreendedorismo</option>
+                            <option value="other">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="challenge" class="block mb-2 font-medium">Seu maior desafio de produtividade</label>
+                        <select id="challenge" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Selecione o principal desafio</option>
+                            <option value="focus">Manter o foco</option>
+                            <option value="time">Gerenciar tempo</option>
+                            <option value="priority">Priorizar tarefas</option>
+                            <option value="energy">Manter energia</option>
+                            <option value="procrastination">Procrastinação</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 font-medium">O que você espera da consultoria?</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full gradient-bg hover:opacity-90 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                        Agendar Consultoria
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl mr-3">H</div>
+                        <span class="text-xl font-semibold">Hiperfoco em Foco</span>
+                    </div>
+                    <p class="text-gray-400">Produtividade inteligente para mentes criativas.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Início</a></li>
+                        <li><a href="#assessment" class="text-gray-400 hover:text-white transition">Teste de Hiperfoco</a></li>
+                        <li><a href="#careers" class="text-gray-400 hover:text-white transition">Carreiras</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Métodos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">contato@hiperfocoemfoco.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">(11) 98765-4321</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                       
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-indigo-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lais-ribeiro-606344324" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-400 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-600 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Hiperfoco em Foco. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission (example)
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Obrigado pelo seu interesse! Entraremos em contato em breve.');
+                this.reset();
+            });
+        }
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Assessment Quiz Logic
+        const questions = [
+            {
+                question: "1. Quando você está realmente engajado em uma atividade:",
+                answers: [
+                    { text: "Perco completamente a noção do tempo esqueço até de necessidades básicas", value: "deep" },
+                    { text: "Tenho momentos intensos de concentração alternados com distrações", value: "intermittent" },
+                    { text: "Só consigo me concentrar assim em assuntos que realmente me interessam", value: "selective" },
+                    { text: "Depende muito do ambiente - se estiver calmo e organizado, consigo focar bem", value: "environmental" }
+                ]
+            },
+            {
+                question: "2. Como você descreveria seu padrão de trabalho ideal?",
+                answers: [
+                    { text: "Longos períodos ininterruptos (4+ horas) em uma única tarefa", value: "deep" },
+                    { text: "Sessões de 1-2 horas com pequenas pausas entre elas", value: "intermittent" },
+                    { text: "Depende totalmente do meu interesse na tarefa", value: "selective" },
+                    { text: "Preciso de um ambiente perfeito para conseguir me concentrar", value: "environmental" }
+                ]
+            },
+            {
+                question: "3. Quando você está no meio de uma tarefa importante e é interrompido:",
+                answers: [
+                    { text: "Levo muito tempo para retomar o mesmo nível de concentração", value: "deep" },
+                    { text: "Consigo voltar rapidamente ao estado de fluxo", value: "intermittent" },
+                    { text: "Sô consigo voltar se a tarefa for realmente interessante", value: "selective" },
+                    { text: "Preciso recriar todo o ambiente para conseguir focar novamente", value: "environmental" }
+                ]
+            },
+            {
+                question: "4. Como você lida com tarefas que considera tediosas?",
+                answers: [
+                    { text: "Consigo me forçar a focar por longos períodos se necessário", value: "deep" },
+                    { text: "Faço em pequenos blocos com muitas pausas", value: "intermittent" },
+                    { text: "Quase impossível - procrastino até o último minuto", value: "selective" },
+                    { text: "Depende - se o ambiente ajudar, consigo me concentrar", value: "environmental" }
+                ]
+            },
+            {
+                question: "5. Como você prefere aprender coisas novas?",
+                answers: [
+                    { text: "Imersão total no assunto por dias ou semanas", value: "deep" },
+                    { text: "Exploro vários tópicos alternadamente", value: "intermittent" },
+                    { text: "Só consigo me dedicar a assuntos que me fascinam", value: "selective" },
+                    { text: "Preciso de um ambiente de estudo perfeito", value: "environmental" }
+                ]
+            }
+        ];
+
+        const profileTypes = {
+            deep: {
+                name: "Hiperfoco Profundo",
+                traits: [
+                    "Capacidade de imersão total por longos períodos",
+                    "Dificuldade em alternar entre tarefas rapidamente",
+                    "Excelente para trabalhos que exigem atenção sustentada",
+                    "Pode negligenciar necessidades básicas quando concentrado"
+                ],
+                careers: [
+                    "Pesquisador Científico", 
+                    "Desenvolvedor de Software", 
+                    "Escritor", 
+                    "Cirurgião", 
+                    "Engenheiro",
+                    "Artista",
+                    "Músico",
+                    "Matemático"
+                ]
+            },
+            intermittent: {
+                name: "Hiperfoco Intermitente",
+                traits: [
+                    "Períodos curtos de alta concentração alternados com pausas",
+                    "Boa capacidade de alternar entre tarefas",
+                    "Ideal para multitarefas e trabalhos dinâmicos",
+                    "Beneficia-se de técnicas como Pomodoro"
+                ],
+                careers: [
+                    "Jornalista", 
+                    "Gerente de Projetos", 
+                    "Professor", 
+                    "Empreendedor", 
+                    "Médico Emergencista",
+                    "Designer",
+                    "Marketing Digital",
+                    "Recursos Humanos"
+                ]
+            },
+            selective: {
+                name: "Hiperfoco Seletivo",
+                traits: [
+                    "Concentração intensa apenas em assuntos de alto interesse",
+                    "Dificuldade com tarefas consideradas tediosas",
+                    "Excelente desempenho em áreas de paixão",
+                    "Beneficia-se de técnicas de gamificação"
+                ],
+                careers: [
+                    "Escritor Criativo", 
+                    "Designer de Jogos", 
+                    "Pesquisador em Áreas Específicas", 
+                    "Artista", 
+                    "Programador Criativo",
+                    "Chef de Cozinha",
+                    "Arquiteto",
+                    "Consultor Especializado"
+                ]
+            },
+            environmental: {
+                name: "Hiperfoco Ambiental",
+                traits: [
+                    "Concentração altamente dependente de condições externas",
+                    "Sensível a interrupções e mudanças no ambiente",
+                    "Excelente desempenho quando as condições são ideais",
+                    "Beneficia-se de controle total sobre o espaço de trabalho"
+                ],
+                careers: [
+                    "Designer de Interiores", 
+                    "Fotógrafo", 
+                    "Escritor", 
+                    "Artista Visual", 
+                    "Arquiteto",
+                    "Editor de Vídeo",
+                    "Tradutor",
+                    "Analista de Dados"
+                ]
+            }
+        };
+
+        let currentQuestion = 0;
+        let answers = [];
+
+        function renderQuestion() {
+            const questionContainer = document.querySelector('.question-container[data-question="' + (currentQuestion + 1) + '"]');
+            if (questionContainer) {
+                document.querySelectorAll('.question-container').forEach(q => q.style.display = 'none');
+                questionContainer.style.display = 'block';
+                
+                // Update progress
+                const progress = ((currentQuestion + 1) / questions.length) * 100;
+                document.getElementById('progress-fill').style.width = progress + '%';
+                document.getElementById('progress-text').textContent = (currentQuestion + 1) + '/' + questions.length;
+                
+                // Show/hide prev button
+                if (currentQuestion > 0) {
+                    document.getElementById('prev-btn').classList.remove('hidden');
+                } else {
+                    document.getElementById('prev-btn').classList.add('hidden');
+                }
+                
+                // Change next button text if last question
+                if (currentQuestion === questions.length - 1) {
+                    document.getElementById('next-btn').textContent = 'Ver Resultados';
+                } else {
+                    document.getElementById('next-btn').textContent = 'Próxima';
+                }
+            }
+        }
+
+        function showResults() {
+            // Simple scoring - count occurrences of each type
+            const score = {
+                deep: 0,
+                intermittent: 0,
+                selective: 0,
+                environmental: 0
+            };
+
+            answers.forEach(answer => {
+                score[answer]++;
+            });
+
+            // Determine dominant type
+            let dominantType = 'deep';
+            let maxScore = 0;
+
+            for (const type in score) {
+                if (score[type] > maxScore) {
+                    maxScore = score[type];
+                    dominantType = type;
+                }
+            }
+
+            // Display results
+            document.getElementById('assessment-questions').style.display = 'none';
+            document.getElementById('assessment-results').style.display = 'block';
+
+            const profile = profileTypes[dominantType];
+            document.getElementById('profile-type').textContent = profile.name;
+
+            const traitsList = document.getElementById('profile-traits');
+            traitsList.innerHTML = '';
+            profile.traits.forEach(trait => {
+                const li = document.createElement('li');
+                li.textContent = trait;
+                traitsList.appendChild(li);
+            });
+
+            const careersContainer = document.getElementById('career-matches');
+            careersContainer.innerHTML = '';
+            profile.careers.forEach(career => {
+                const span = document.createElement('span');
+                span.className = 'career-pill';
+                span.textContent = career;
+                careersContainer.appendChild(span);
+            });
+
+            // Update progress to 100%
+            document.getElementById('progress-fill').style.width = '100%';
+            document.getElementById('progress-text').textContent = questions.length + '/' + questions.length;
+        }
+
+        // Event listeners for assessment
+        document.getElementById('next-btn').addEventListener('click', function() {
+            const currentQuestionElement = document.querySelector('.question-container[data-question="' + (currentQuestion + 1) + '"]');
+            const selectedAnswer = currentQuestionElement.querySelector('input[name="question' + (currentQuestion + 1) + '"]:checked');
+
+            if (selectedAnswer) {
+                answers[currentQuestion] = selectedAnswer.value;
+                
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    renderQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert('Por favor, selecione uma resposta antes de continuar.');
+            }
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        });
+
+        document.getElementById('retake-btn').addEventListener('click', function() {
+            // Reset assessment
+            currentQuestion = 0;
+            answers = [];
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+
+            // Show questions and hide results
+            document.getElementById('assessment-questions').style.display = 'block';
+            document.getElementById('assessment-results').style.display = 'none';
+
+            renderQuestion();
+        });
+
+        document.getElementById('save-btn').addEventListener('click', function() {
+            alert('Resultados salvos com sucesso! (Funcionalidade de exemplo)');
+        });
+
+        // Initialize assessment
+        renderQuestion();
+
+        // Radio button selection
+        document.querySelectorAll('.assessment-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                    document.querySelectorAll('.assessment-card').forEach(c => {
+                        c.querySelector('div').classList.remove('border-indigo-500');
+                        c.querySelector('div').classList.add('border-gray-300');
+                    });
+                    this.querySelector('div').classList.remove('border-gray-300');
+                    this.querySelector('div').classList.add('border-indigo-500');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
