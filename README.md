@@ -82,6 +82,9 @@ O projeto surgiu com a intenção de unir **neurodivergência** e **carreira**, 
 
         
 
+[Uploadi[InternetShortcut]
+URL=https://hiperfoco-em-foco.netlify.app/
+ng Hiperfoco em Foco - Produtividade para Mentes Criativas.url…]()
 
 
 
