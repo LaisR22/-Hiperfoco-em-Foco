@@ -4,6 +4,7 @@
 ![Captura de tela 2025-05-16 183705](https://github.com/user-attachments/assets/6245c590-8317-457d-a3b5-aee8d4f52da6)
 
 
+
 **Hiperfoco em Foco** é uma plataforma web desenvolvida com o objetivo de auxiliar pessoas a descobrirem seus padrões de concentração (hiperfoco) e relacioná-los a possíveis carreiras profissionais. A proposta combina design limpo, acessibilidade e conteúdo informativo voltado à orientação profissional.
 
 ---
@@ -75,10 +76,11 @@ O projeto surgiu com a intenção de unir **neurodivergência** e **carreira**, 
 | Figma       | Protótipo do layout (caso tenha usado)   |
 | Google Fonts | Tipografia acessível e moderna          |
 
----
+
 
 ## 💻 Demonstração 
 
+        
 
 
 
@@ -88,6 +90,5 @@ O projeto surgiu com a intenção de unir **neurodivergência** e **carreira**, 
 
 
 ## Desenvolvido por Lais Ribeiro 🧩 ##
-
 
 
