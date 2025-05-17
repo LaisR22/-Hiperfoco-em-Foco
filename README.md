@@ -1,4 +1,4 @@
-##  Hiperfoco em Foco
+--##  Hiperfoco em Foco
 
  
 ![Captura de tela 2025-05-16 183705](https://github.com/user-attachments/assets/6245c590-8317-457d-a3b5-aee8d4f52da6)
@@ -77,18 +77,9 @@ O projeto surgiu com a intenção de unir **neurodivergência** e **carreira**, 
 | Google Fonts | Tipografia acessível e moderna          |
 
 
----
+---       
 
-
-        
-
-[Uploadi[InternetShortcut]
-URL=https://hiperfoco-em-foco.netlify.app/
-ng Hiperfoco em Foco - Produtividade para Mentes Criativas.url…]()
-
-
-
-
+[Uploadi[InternetShortcut] URL=https://hiperfoco-em-foco.netlify.app/ng Hiperfoco em Foco - Produtividade para Mentes Criativas.url…]()
 
 
 
