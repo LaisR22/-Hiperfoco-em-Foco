@@ -79,10 +79,9 @@ O projeto surgiu com a intenção de unir **neurodivergência** e **carreira**, 
 
 ---       
 
+## 💻  Demonstração
 
-## Demonstração
-
-📽️ ![2025-05-1811-06-51-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/db0c93ae-b38f-498e-82b4-9f7e3cdd2c07)
+ ![2025-05-1811-06-51-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/db0c93ae-b38f-498e-82b4-9f7e3cdd2c07)
 
 ## Desenvolvido por Lais Ribeiro 🧩 ##
 
